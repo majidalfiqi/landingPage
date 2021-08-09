@@ -2,6 +2,10 @@
 
 :root {
   --clr-bg: linear-gradient(to top right, #6897eb, #274aa6);
+  --clr-primary: #274aa6;
+  --clr-secondary: #6897eb;
+  --fnt-head: "Georama", sans-serif;
+  --fnt-body: "Catamaran", sans-serif;
 }
 
 /* resets */
@@ -11,4 +15,64 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* body */
+body {
+  font-family: var(--fnt-body);
+  background: var(--clr-bg);
+  color: var(--clr-primary);
+  padding-top: 80px;
+}
+
+/* header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background: #fff;
+}
+
+.logo {
+  width: 200px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+/* nav */
+.nav {
+  width: 500px;
+}
+
+.nav-list {
+  height: 80px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--clr-primary);
+  padding: 35px 30px;
+}
+
+.nav-list a:hover {
+  background: var(--clr-secondary);
+  color: #fff;
+}
+
+.nav-list a.active {
+  background: var(--clr-secondary);
+  color: #fff;
 }
