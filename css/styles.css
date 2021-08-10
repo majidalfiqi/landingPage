@@ -96,6 +96,34 @@ h4 {
   color: #fff;
 }
 /* end nav */
+
+/* burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 25px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.burger div {
+  background-color: var(--clr-primary);
+  width: 20px;
+  height: 2px;
+}
+
+.burger div:last-child {
+  transform-origin: left;
+  transform: scaleX(0.7);
+  transition: transform 0.3s ease;
+}
+
+.burger:hover > div:last-child {
+  transform: scaleX(1);
+}
+/* end burger */
 /* end header */
 
 /* main */
