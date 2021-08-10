@@ -135,6 +135,7 @@ h4 {
   background: #000;
   opacity: 0.3;
   pointer-events: none;
+  z-index: 5;
 }
 
 .selected::before {
