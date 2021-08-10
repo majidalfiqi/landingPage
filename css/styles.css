@@ -150,6 +150,11 @@ h4 {
   margin-bottom: 20px;
 }
 
+.section img {
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
 .section > p {
   width: 90%;
   text-align: justify;
