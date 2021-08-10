@@ -99,10 +99,18 @@ h4 {
 /* end header */
 
 /* main */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* hero */
 .hero {
   position: relative;
   height: calc(100vh - 80px);
+  width: 100%;
   overflow: hidden;
   background-image: url(../res/hero.jpg);
   background-position: center;
@@ -124,9 +132,8 @@ h4 {
   background: #fff;
   margin: 30px;
   padding: 100px 30px;
+  width: calc(100vw - 60px);
   max-width: 1050px;
-  margin-left: auto;
-  margin-right: auto;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -152,12 +159,12 @@ h4 {
 }
 
 .section h2 {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .section img {
   max-width: 400px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .section > p {
@@ -303,3 +310,5 @@ form button:hover {
 }
 /* end copyrights */
 /* end footer */
+
+/* TODO: media queries at 900px - 700px - 500px */
