@@ -1,9 +1,10 @@
 // query selectors
-let header = document.querySelector(".header");
-let logo = document.querySelector(".logo");
-let navList = document.querySelector(".nav-list");
-let burger = document.querySelector(".burger");
-let sections = document.querySelectorAll(".section");
+const header = document.querySelector(".header");
+const logo = document.querySelector(".logo");
+const navList = document.querySelector(".nav-list");
+const burger = document.querySelector(".burger");
+const sections = document.querySelectorAll(".section");
+const toTop = document.querySelector(".to-top");
 
 // event listeners
 logo.addEventListener("click", () => header.classList.remove("mobile"));
@@ -11,13 +12,13 @@ burger.addEventListener("click", () => header.classList.toggle("mobile"));
 
 // create the nav menu dynamically
 // create fragment element to hold the menu items
-let menu = document.createDocumentFragment();
+const menu = document.createDocumentFragment();
 //loop over all elements with class of 'section'
 sections.forEach((section) => {
   // create the list element
-  let li = document.createElement("li");
+  const li = document.createElement("li");
   // create the anchor tag element
-  let a = document.createElement("a");
+  const a = document.createElement("a");
   // set the href attribute to link to the id of the section element
   a.setAttribute("href", "#" + section.getAttribute("id"));
   // set the class to be the same value as the id to be used to highlight the active
@@ -35,16 +36,20 @@ sections.forEach((section) => {
 navList.appendChild(menu);
 
 // scroll event to highlight the section closest to top of the page and highlight the corresponding entry in the nav menu
-addEventListener("scroll", () => {
+addEventListener("scroll", (e) => {
+  // check if scrolled beyond the fold to show scroll to top button otherwise hide it
+  if (scrollY > innerHeight) toTop.style.display = "block";
+  else toTop.style.display = "none";
+
   // object to track the min difference between to of the page and top of each section
-  let min = {
+  const min = {
     id: "",
     top: 10000000,
   };
   // loop over sections
   sections.forEach((section) => {
     // get the bounding box of each section
-    let bBox = section.getBoundingClientRect();
+    const bBox = section.getBoundingClientRect();
     // check if the absolute value of the top is less than the current minimum
     if (Math.abs(bBox.top) < min.top) {
       //update the min object

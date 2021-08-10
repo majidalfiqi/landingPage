@@ -31,6 +31,7 @@ body {
   padding-top: 80px;
   text-align: center;
   overflow-x: hidden;
+  position: relative;
 }
 /* end body */
 
@@ -348,6 +349,27 @@ form button:hover {
 }
 /* end copyrights */
 /* end footer */
+
+/* scroll to top */
+.to-top {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #6897ebaa;
+  height: 70px;
+  width: 70px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.to-top img {
+  margin: auto;
+}
+/* end scroll tot top */
 
 /* media queries */
 @media screen and (max-width: 1000px) {
