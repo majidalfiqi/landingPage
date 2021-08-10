@@ -1,5 +1,4 @@
 /* variables */
-
 :root {
   --clr-bg: linear-gradient(to top right, #6897eb, #274aa6);
   --clr-primary: #274aa6;
@@ -7,6 +6,7 @@
   --fnt-head: "Georama", sans-serif;
   --fnt-body: "Catamaran", sans-serif;
 }
+/* end variables */
 
 /* resets */
 *,
@@ -16,6 +16,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* end resets */
 
 /* body */
 body {
@@ -23,7 +24,18 @@ body {
   background: var(--clr-bg);
   color: var(--clr-primary);
   padding-top: 80px;
+  text-align: center;
 }
+/* end body */
+
+/* headings */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fnt-head);
+}
+/* end headings */
 
 /* header */
 .header {
@@ -38,6 +50,7 @@ body {
   justify-content: space-between;
   padding: 0 30px;
   background: #fff;
+  z-index: 10;
 }
 
 .logo {
@@ -76,3 +89,26 @@ body {
   background: var(--clr-secondary);
   color: #fff;
 }
+/* end nav */
+/* end header */
+
+/* main */
+/* hero */
+.hero {
+  position: relative;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  background-image: url(../res/hero.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.hero h1 {
+  position: absolute;
+  font-size: 4rem;
+  top: 35%;
+  right: 10%;
+  color: var(--clr-primary);
+}
+/* end hero */
+/* end main */
