@@ -7,7 +7,15 @@ const sections = document.querySelectorAll(".section");
 const toTop = document.querySelector(".to-top");
 
 // event listeners
-logo.addEventListener("click", () => header.classList.remove("mobile"));
+logo.addEventListener("click", (e) => {
+  e.preventDefault();
+  header.classList.remove("mobile");
+  scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});
 burger.addEventListener("click", () => header.classList.toggle("mobile"));
 
 // create the nav menu dynamically
@@ -19,7 +27,12 @@ sections.forEach((section) => {
   a.setAttribute("href", "#" + section.getAttribute("id")); // set the href attribute to link to the id of the section element
   a.classList.add(section.getAttribute("id")); // set the class to be the same value as the id to be used to highlight the active
   a.innerText = section.dataset.nav; // set the text of the menu item to the 'data-nav' attribute of the section
-  a.addEventListener("click", () => header.classList.remove("mobile")); // add event listener to hide the mobile menu when clicked
+  a.addEventListener("click", (e) => {
+    // add event listener to smooth scroll and hide the mobile menu when clicked
+    e.preventDefault();
+    header.classList.remove("mobile");
+    document.getElementById(e.target.classList[0]).scrollIntoView({ behavior: "smooth" });
+  });
   li.appendChild(a); // append the anchor element to to the list element
   menu.appendChild(li); // append the list element to the fragment element
 });
