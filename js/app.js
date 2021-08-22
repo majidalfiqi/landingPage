@@ -17,6 +17,14 @@ logo.addEventListener("click", (e) => {
   });
 });
 burger.addEventListener("click", () => header.classList.toggle("mobile"));
+toTop.addEventListener("click", (e) => {
+  e.preventDefault();
+  scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});
 
 // create the nav menu dynamically
 const menu = document.createDocumentFragment(); // create fragment element to hold the menu items
